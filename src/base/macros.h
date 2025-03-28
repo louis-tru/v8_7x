@@ -233,6 +233,10 @@ struct is_trivially_copyable {
       // Trivial non-deleted destructor.
       std::is_trivially_destructible<T>::value;
 
+#elif defined(__clang__)
+  static constexpr bool value =
+    __is_trivially_copyable(T) && __is_trivially_destructible(T);
+
 #elif defined(__GNUC__) && __GNUC__ < 5
   // WARNING:
   // On older libstdc++ versions, there is no way to correctly implement
