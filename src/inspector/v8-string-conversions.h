@@ -11,8 +11,9 @@
 // Conversion routines between UT8 and UTF16, used by string-16.{h,cc}. You may
 // want to use string-16.h directly rather than these.
 namespace v8_inspector {
-std::basic_string<uint16_t> UTF8ToUTF16(const char* stringStart, size_t length);
-std::string UTF16ToUTF8(const uint16_t* stringStart, size_t length);
+using UChar = char16_t;
+std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length);
+std::string UTF16ToUTF8(const UChar* stringStart, size_t length);
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_STRING_CONVERSIONS_H_

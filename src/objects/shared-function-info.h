@@ -681,11 +681,11 @@ class SharedFunctionInfo : public HeapObject {
 #undef FLAGS_BIT_FIELDS
 
   // Bailout reasons must fit in the DisabledOptimizationReason bitfield.
-  STATIC_ASSERT(int32_t(BailoutReason::kLastErrorMessage) <=
+  STATIC_ASSERT(BailoutReason::kLastErrorMessage <=
                 DisabledOptimizationReasonBits::kMax);
 
   STATIC_ASSERT(kLastFunctionKind <= FunctionKindBits::kMax);
-  STATIC_ASSERT(int32_t(FunctionSyntaxKind::kLastFunctionSyntaxKind) <=
+  STATIC_ASSERT(FunctionSyntaxKind::kLastFunctionSyntaxKind <=
                 FunctionSyntaxKindBits::kMax);
 
   // Indicates that this function uses a super property (or an eval that may

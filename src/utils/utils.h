@@ -330,7 +330,7 @@ class BitField final {
   static constexpr U kNumValues = U{1} << kSize;
 
   // Value for the field with all bits set.
-  static constexpr U kMax = static_cast<U>(kNumValues - 1);
+  static const T kMax = static_cast<T>(kNumValues - 1);
 
   template <class T2, int size2>
   using Next = BitField<T2, kShift + kSize, size2, U>;

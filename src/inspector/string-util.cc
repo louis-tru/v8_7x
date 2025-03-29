@@ -121,7 +121,7 @@ std::unique_ptr<protocol::Value> StringUtil::parseJSON(
 
 std::unique_ptr<protocol::Value> StringUtil::parseJSON(const String16& string) {
   if (!string.length()) return nullptr;
-  return parseJSONCharacters(string.characters16(),
+  return parseJSONCharacters((uint16_t*)string.characters16(),
                              static_cast<int>(string.length()));
 }
 
